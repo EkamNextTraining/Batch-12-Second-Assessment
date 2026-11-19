@@ -15,180 +15,180 @@ const QUESTIONS = [
     "id": 1,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Triggers — Before and After Triggers",
-    "scenario": "A company wants to automatically convert the Account Name into uppercase before saving a new Account record. Additionally, whenever an Account is created, a related Contact record should be created automatically.",
-    "question": "Which trigger events would you use to implement both requirements? Explain the difference between Before and After triggers and when each should be used.",
+    "category": "Flows",
+    "scenario": "A company wants to automatically create a Task whenever a new Opportunity is created with an Amount greater than 100,000. The Task should be assigned to the Opportunity owner.",
+    "question": "How would you implement this requirement using Salesforce Flow? Explain the appropriate Flow type, entry conditions, and the elements required to create the Task.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 2,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Trigger Events — Insert, Update, Delete and Undelete",
-    "scenario": "A company wants to maintain the total number of active Contacts related to each Account. The count should increase when a Contact is inserted or restored from the Recycle Bin and decrease when a Contact is deleted.",
-    "question": "Which Apex trigger events would you use to handle these operations? Explain how Insert, Update, Delete, and Undelete trigger events work and how you would maintain the correct Contact count.",
+    "category": "Workflow Rules and Field Updates",
+    "scenario": "A company wants to automatically update the Account Rating to Hot whenever the Annual Revenue exceeds 10 million. Additionally, whenever an Opportunity is marked as Closed Won, the related Account's Description should be updated.",
+    "question": "How would you implement these requirements using Workflow Rules, Field Updates, and Salesforce Flows? Explain how you would choose between these automation tools.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 3,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Triggers — Update Trigger",
-    "scenario": "A company wants to create an Opportunity History custom record whenever an Opportunity Stage is changed. The history record should contain the previous Stage, new Stage, Opportunity Name, and modification date. No history record should be created when other Opportunity fields are updated.",
-    "question": "How would you implement this requirement using an Apex Update Trigger? Explain how Trigger.oldMap and Trigger.new can be used to identify changes in field values.",
+    "category": "Flows — Email Alerts",
+    "scenario": "A company wants to send an email notification to the Sales Manager whenever an Opportunity is created with an Amount greater than 500,000. The email should contain the Opportunity Name, Amount, and Close Date.",
+    "question": "How would you configure this requirement using Salesforce Flow and Email Alerts? Explain how you would configure the email action, recipients, and entry conditions.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 4,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Triggers — Delete and Undelete",
-    "scenario": "A company wants to prevent users from deleting an Account if it has any related Opportunities in the Closed Won stage. However, if an Account is deleted and later restored, the company wants to update a custom field indicating that the Account was recovered.",
-    "question": "Which Apex trigger events and context variables would you use to implement these requirements? Explain how addError() can prevent record deletion.",
+    "category": "Email Templates",
+    "scenario": "A company wants to send personalized emails to customers whenever a Case is closed. The email should include the customer's name, Case Number, Subject, and Case Status.",
+    "question": "How would you create an Email Template to meet this requirement? Explain the different types of Salesforce Email Templates and how merge fields can be used to display dynamic record information.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 5,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Triggers — Bulkification",
-    "scenario": "A company inserts 200 Account records in a single transaction. Whenever an Account is created, the system must create three related Contacts for each Account. The current trigger executes a SOQL query and performs DML operations inside a for loop, resulting in governor limit exceptions.",
-    "question": "How would you redesign this trigger using Apex bulkification best practices? Explain the use of collections, SOQL outside loops, and bulk DML operations.",
+    "category": "Approval Processes",
+    "scenario": "A company requires manager approval whenever an employee submits an Expense record with an Amount greater than 50,000. The record should be locked during the approval process. Once approved, the Expense Status should change to Approved, and an email notification should be sent to the employee.",
+    "question": "How would you configure an Approval Process to implement this requirement? Explain the entry criteria, approver assignment, initial submission actions, approval actions, rejection actions, and record locking.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 6,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Governor Limits and Trigger Best Practices",
-    "scenario": "A company has multiple Apex triggers and helper classes executing during a single transaction. Users are receiving Too Many SOQL Queries and Too Many DML Statements exceptions while performing bulk updates.",
-    "question": "What are Salesforce Governor Limits, and how would you identify and resolve these exceptions? Explain the best practices you would follow while designing Apex Triggers.",
+    "category": "Reports — Tabular Reports",
+    "scenario": "A Sales Manager wants to view all Opportunities with their Opportunity Name, Account Name, Amount, Stage, and Close Date. The manager does not require grouping or summary calculations.",
+    "question": "Which Salesforce report format would you recommend? Explain how to create a Tabular Report and apply filters to display the required Opportunity records.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 7,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Testing — Introduction to Test Classes",
-    "scenario": "A developer has completed an Apex class that creates an Account and related Contacts. Before deploying the class to production, the developer needs to verify that the functionality works correctly.",
-    "question": "Why are Apex Test Classes required in Salesforce? Explain how you would write a test class using @isTest, Test.startTest(), Test.stopTest(), and System.assertEquals().",
+    "category": "Reports — Summary Reports",
+    "scenario": "A company wants to generate a report showing the total Opportunity Amount for each Sales Representative. Management also wants to compare the total revenue generated by individual representatives.",
+    "question": "Which report format would you use to meet this requirement? Explain how Summary Reports, row grouping, and summary calculations can be configured.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 8,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Testing — Unit Testing",
-    "scenario": "A developer has written an Apex method that calculates a discount based on the Opportunity Amount. The method supports different discount percentages depending on the amount range. The developer wants to verify all possible scenarios.",
-    "question": "How would you write unit test methods to validate the different discount conditions? Explain positive testing, negative testing, boundary testing, and the use of assertions.",
+    "category": "Reports — Matrix Reports",
+    "scenario": "A company wants to analyze Opportunity revenue based on both Sales Representative and Opportunity Stage. Management wants to compare how much revenue each representative generates across different stages.",
+    "question": "Which report format would you recommend? Explain how Matrix Reports use row grouping and column grouping to display the required information.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 9,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Testing — Trigger Test Classes",
-    "scenario": "A Contact trigger prevents duplicate Contacts based on Email and Phone. The trigger also updates a custom Contact Count field on the related Account whenever Contacts are inserted or deleted.",
-    "question": "How would you write a test class to validate this trigger functionality? Explain how you would test successful insertions, duplicate record prevention, deletion, and Account count updates.",
+    "category": "Charts and Dashboards",
+    "scenario": "The Sales Director wants a dashboard displaying total revenue by month, Opportunities grouped by Stage, and the top five Sales Representatives based on closed revenue. The dashboard should provide a quick overview of sales performance.",
+    "question": "How would you create this dashboard using Salesforce Reports and Dashboard Components? Explain the types of charts and components you would use for each requirement.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 10,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Testing — Test Data Factory",
-    "scenario": "A development team has 15 Apex test classes, and every test class independently creates Accounts, Contacts, Opportunities, and custom object records. Maintaining test data across all these classes has become difficult.",
-    "question": "How would you implement a Test Data Factory to create reusable test records? Explain how a factory class improves code reusability, maintainability, and test data preparation.",
+    "category": "Scheduled Reports",
+    "scenario": "A Sales Manager wants to receive an email every Monday morning containing the previous week's Opportunity report. The report should include only Opportunities owned by the manager's team.",
+    "question": "How would you configure a Scheduled Report to meet this requirement? Explain report filters, scheduling frequency, recipients, and email notification settings.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 11,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Apex Testing — Test Data Preparation",
-    "scenario": "A developer is writing a test class for an Apex method that retrieves Accounts based on Industry and Rating. The test class works in the developer's environment but fails in another Salesforce organization because the required Account records are not available.",
-    "question": "Why should test classes create their own test data instead of depending on existing organization records? Explain the purpose of @testSetup, SeeAllData=false, and reusable test data preparation methods.",
+    "category": "Apex — Data Types, Variables, Assignment and Type Casting",
+    "scenario": "A developer is building an Apex program that stores an Employee Name, Age, Salary, Joining Date, and Active Status. The salary is initially received as a String from an external source but must be stored as a Decimal for calculations.",
+    "question": "Which Apex data types would you use for these variables? Explain variable declaration, assignment, and how you would convert the String salary into a Decimal using type casting or conversion methods.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 12,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Async Apex — Future Methods",
-    "scenario": "Whenever an Account is updated, the company wants to send its Account details to an external application through an HTTP callout. The callout should execute asynchronously so that the main transaction does not wait for the external system.",
-    "question": "How would you implement this requirement using a Future Method? Explain the use of @future(callout=true), static methods, supported parameter types, and the limitations of Future Methods.",
+    "category": "Apex — Conditional Statements",
+    "scenario": "A company wants to calculate employee bonuses based on performance ratings. Employees with an Excellent rating receive a 20% bonus, Good receive 10%, Average receive 5%, and Poor receive no bonus.",
+    "question": "How would you implement this business logic using Apex conditional statements? Explain when you would use if, if-else, and switch/case statements.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 13,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Async Apex — Batch Apex",
-    "scenario": "A company has more than 500,000 Contact records and wants to update a custom field called Customer_Status__c for all Contacts based on their Account Industry. Processing all records synchronously causes governor limit exceptions.",
-    "question": "How would you implement this requirement using Batch Apex? Explain the purpose of start(), execute(), and finish() methods, Database.QueryLocator, and batch scope size.",
+    "category": "Apex — String Methods",
+    "scenario": "A company receives customer email addresses with unnecessary spaces and inconsistent uppercase and lowercase characters. Before saving the email addresses, the developer wants to remove extra spaces and convert them into lowercase. The developer also wants to check whether the email contains the domain '@gmail.com'.",
+    "question": "Which Apex String methods would you use to implement these requirements? Explain the use of trim(), toLowerCase(), contains(), startsWith(), and other useful String methods with examples.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 14,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Async Apex — Schedulable Apex",
-    "scenario": "A company wants to execute an Apex process every day at midnight to identify Accounts that have not been modified for the last 90 days and update their status to Inactive.",
-    "question": "How would you implement this requirement using Schedulable Apex? Explain the use of the Schedulable interface, execute() method, System.schedule(), and Cron expressions.",
+    "category": "Apex — Integer Methods",
+    "scenario": "A developer receives a numeric value as a String from an external application. The value must be converted into an Integer, increased by 10, and converted back into a String before sending it to another application.",
+    "question": "How would you perform these operations in Apex? Explain Integer.valueOf(), Integer.parseInt() where applicable, and the methods available for converting numeric values into Strings.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 15,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Async Apex — Queueable Apex",
-    "scenario": "A company needs to process a group of Account records asynchronously. During processing, the system must pass a complex data structure containing Account details and related Contact information to the asynchronous process. The process may also need to chain another asynchronous job.",
-    "question": "How would you implement this requirement using Queueable Apex? Explain the Queueable interface, execute() method, System.enqueueJob(), job chaining, and how Queueable Apex differs from Future Methods.",
+    "category": "Apex — For Loops",
+    "scenario": "A developer has a List of 10 Account records and wants to iterate through the collection to display the Account Name and Industry of every Account.",
+    "question": "How would you implement this requirement using a traditional for loop and a for-each loop in Apex? Explain the difference between the two approaches.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 16,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Async Apex — Monitoring and Troubleshooting",
-    "scenario": "A developer has scheduled a Batch Apex job to process 100,000 records. The job was submitted successfully, but some records are not updated, and the developer wants to identify whether the job completed, failed, or is still processing.",
-    "question": "How would you monitor and troubleshoot asynchronous Apex jobs? Explain the use of Apex Jobs, AsyncApexJob, CronTrigger, and relevant job status information.",
+    "category": "Apex — While Loops",
+    "scenario": "A developer wants to process numbers starting from 1 and continue processing until the number reaches 10. For every iteration, the number should be displayed and incremented by 1.",
+    "question": "How would you implement this requirement using a while loop in Apex? Explain how the loop condition, initialization, and increment operation work. What could happen if the increment operation is missing?",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 17,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Integration using Apex — REST Callouts",
-    "scenario": "A company wants to integrate Salesforce with an external employee management application. Salesforce must send employee details through an HTTP POST request and receive employee information in JSON format.",
-    "question": "How would you implement this integration using Apex REST Callouts? Explain HttpRequest, HttpResponse, Http, HTTP methods, JSON serialization, and JSON deserialization.",
+    "category": "Apex — SOQL",
+    "scenario": "A company wants to retrieve all Account records where Industry is Banking and Annual Revenue is greater than 1 million. The developer also needs to retrieve the related Contacts for each Account.",
+    "question": "How would you write a SOQL query to retrieve the required Account records and their related Contacts? Explain WHERE, ORDER BY, LIMIT, and parent-to-child relationship queries.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 18,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Integration using Apex — SOAP Callouts",
-    "scenario": "A company uses an external banking application that exposes its services through SOAP Web Services. Salesforce must invoke the banking service to retrieve payment details and process the response.",
-    "question": "How would you integrate Salesforce with the external SOAP service using Apex? Explain WSDL, WSDL2Apex, generated Apex classes, and how SOAP callouts differ from REST callouts.",
+    "category": "Apex — SOQL and Relationship Queries",
+    "scenario": "A company wants to retrieve all Contacts along with their parent Account Name, Account Industry, and Account Phone. Only Contacts whose parent Account belongs to the Banking Industry should be retrieved.",
+    "question": "How would you write a SOQL query using a child-to-parent relationship query? Explain how relationship field notation is used to access parent object fields.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 19,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Integration using Apex — Named Credentials and OAuth 2.0",
-    "scenario": "A company wants to connect Salesforce to a third-party REST API that requires OAuth 2.0 authentication. The current implementation stores the API endpoint, client credentials, and access token directly inside an Apex class.",
-    "question": "How would you redesign this integration using Named Credentials, External Credentials, and OAuth 2.0? Explain how these features improve authentication, security, and maintainability.",
+    "category": "Apex — SOSL",
+    "scenario": "A customer support application allows users to search for a customer using a keyword. The keyword may exist in the Account Name, Contact Name, or Lead Name fields. The developer wants to search across all three objects in a single search operation.",
+    "question": "How would you implement this requirement using SOSL? Explain the FIND clause, RETURNING clause, search scope, and the difference between SOSL and SOQL.",
     "placeholder": "Enter your answer..."
   },
   {
     "id": 20,
     "part": "Part 1 — Scenario Questions",
     "type": "scenario",
-    "category": "Integration using Apex — Connected Apps",
-    "scenario": "An external application wants to authenticate with Salesforce and access Salesforce records through REST APIs. The company wants to configure a secure authentication mechanism instead of sharing Salesforce usernames and passwords.",
-    "question": "How would you configure a Connected App for this integration? Explain the purpose of OAuth 2.0, Consumer Key, Consumer Secret, callback URL, OAuth scopes, and access tokens.",
+    "category": "Apex — SOQL vs SOSL",
+    "scenario": "A developer needs to implement two requirements. The first requirement is to retrieve all Accounts where Industry is Banking. The second requirement is to search for a keyword across Account, Contact, and Lead records.",
+    "question": "Which query language would you use for each requirement? Explain the differences between SOQL and SOSL, including their use cases, query structure, and search capabilities.",
     "placeholder": "Enter your answer..."
   },
 
@@ -200,14 +200,14 @@ const QUESTIONS = [
     "id": 21,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Triggers — Before and After",
-    "scenario": "A developer wants to update the Account Name before the Account record is saved into the database. The developer does not want to perform an additional DML operation.",
-    "question": "Which Apex Trigger event should be used?",
+    "category": "Flows — Record-Triggered Flow",
+    "scenario": "A company wants to automatically create a Task whenever an Opportunity is created with an Amount greater than 100,000.",
+    "question": "Which Salesforce automation tool is most suitable for implementing this requirement?",
     "options": [
-      "After Insert",
-      "Before Insert",
-      "After Update",
-      "After Delete"
+      "Approval Process",
+      "Record-Triggered Flow",
+      "Validation Rule",
+      "List View"
     ],
     "answer": 1
   },
@@ -215,44 +215,44 @@ const QUESTIONS = [
     "id": 22,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Trigger Events",
-    "scenario": "A developer wants to access the records that are being deleted and perform additional processing before they are permanently removed.",
-    "question": "Which trigger context variable contains the records being deleted?",
+    "category": "Workflow Rules and Field Updates",
+    "scenario": "A company wants to automatically update the Account Rating field whenever Annual Revenue exceeds a specified amount.",
+    "question": "Which Workflow Rule action can be used to automatically update a field value?",
     "options": [
-      "Trigger.new",
-      "Trigger.newMap",
-      "Trigger.old",
-      "Trigger.newMap and Trigger.oldMap"
+      "Email Alert",
+      "Field Update",
+      "Outbound Message",
+      "Task Creation"
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "id": 23,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Triggers",
-    "scenario": "A user accidentally deletes a Contact and later restores it from the Recycle Bin. The developer wants to execute additional logic when the Contact is restored.",
-    "question": "Which Apex Trigger event is executed when a record is restored from the Recycle Bin?",
+    "category": "Email Templates",
+    "scenario": "A company wants to send personalized emails to customers containing their Name, Account Name, and other record-specific information.",
+    "question": "Which Salesforce feature allows dynamic record information to be inserted into an email?",
     "options": [
-      "After Insert",
-      "Before Update",
-      "After Undelete",
-      "Before Delete"
+      "Static Text",
+      "Merge Fields",
+      "Validation Rules",
+      "Page Layouts"
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "id": 24,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Bulkification and Governor Limits",
-    "scenario": "A developer writes an Apex Trigger that processes 200 Account records. The trigger performs one SOQL query for every Account inside a for loop.",
-    "question": "What is the best practice to avoid exceeding the SOQL query governor limit?",
+    "category": "Approval Processes",
+    "scenario": "An employee submits an Expense record for approval. The company wants to prevent other users from editing the record while it is waiting for approval.",
+    "question": "Which Approval Process action is used to prevent record modifications during the approval process?",
     "options": [
-      "Increase the SOQL query limit",
-      "Move SOQL queries outside loops and use collections",
-      "Use multiple triggers for the same object",
-      "Execute a separate transaction for every Account"
+      "Initial Submission Action",
+      "Record Lock",
+      "Final Approval Action",
+      "Email Alert"
     ],
     "answer": 1
   },
@@ -260,14 +260,14 @@ const QUESTIONS = [
     "id": 25,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Testing",
-    "scenario": "A developer has written an Apex class and wants to create a test class to validate its functionality before deployment.",
-    "question": "Which annotation is used to identify an Apex test class?",
+    "category": "Reports — Tabular Reports",
+    "scenario": "A Sales Manager wants a simple list of all Opportunities with their Names, Amounts, and Close Dates without grouping the records.",
+    "question": "Which Salesforce report format should be used?",
     "options": [
-      "@AuraEnabled",
-      "@Future",
-      "@isTest",
-      "@InvocableMethod"
+      "Summary Report",
+      "Matrix Report",
+      "Tabular Report",
+      "Joined Report"
     ],
     "answer": 2
   },
@@ -275,14 +275,14 @@ const QUESTIONS = [
     "id": 26,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Testing",
-    "scenario": "A developer wants to isolate the execution of the actual code being tested from the test data preparation portion to get accurate governor limit measurements.",
-    "question": "Which methods are used to define the test execution boundary?",
+    "category": "Reports — Summary Reports",
+    "scenario": "A company wants to group Opportunities by Sales Representative and calculate the total Opportunity Amount for each representative.",
+    "question": "Which report format is most appropriate?",
     "options": [
-      "Test.begin() and Test.end()",
-      "Test.startTest() and Test.stopTest()",
-      "System.start() and System.stop()",
-      "Test.execute() and Test.finish()"
+      "Tabular Report",
+      "Summary Report",
+      "Matrix Report",
+      "Joined Report"
     ],
     "answer": 1
   },
@@ -290,29 +290,29 @@ const QUESTIONS = [
     "id": 27,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Testing",
-    "scenario": "A test method executes an Apex method that calculates a discount. The developer wants to verify whether the actual discount is equal to the expected discount.",
-    "question": "Which System method should be used to compare the expected and actual values?",
+    "category": "Reports — Matrix Reports",
+    "scenario": "Management wants to analyze Opportunity revenue by both Sales Representative and Opportunity Stage.",
+    "question": "Which report format allows records to be grouped using both rows and columns?",
     "options": [
-      "System.debug()",
-      "System.assertEquals()",
-      "System.addError()",
-      "System.enqueueJob()"
+      "Tabular Report",
+      "Summary Report",
+      "Matrix Report",
+      "Joined Report"
     ],
-    "answer": 1
+    "answer": 2
   },
   {
     "id": 28,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Testing",
-    "scenario": "A Contact trigger prevents duplicate Contacts based on Email. A developer wants to verify that inserting a duplicate Contact throws an error.",
-    "question": "Which approach should be used to verify the expected exception or DML error in the test class?",
+    "category": "Charts and Dashboards",
+    "scenario": "A Sales Director wants to display the total revenue generated by each Sales Representative using a visual comparison.",
+    "question": "Which dashboard component would be most suitable?",
     "options": [
-      "Use Test.isRunningTest()",
-      "Use Database.insert() with allOrNone=false and verify the SaveResult error",
-      "Use System.debug() only",
-      "Use Test.startTest() without assertions"
+      "Table",
+      "Bar Chart",
+      "Metric",
+      "Text Component"
     ],
     "answer": 1
   },
@@ -320,59 +320,59 @@ const QUESTIONS = [
     "id": 29,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Testing",
-    "scenario": "A development team has multiple test classes that require Account, Contact, and Opportunity records. The team wants to avoid writing the same test data creation logic repeatedly.",
-    "question": "Which approach is most appropriate?",
+    "category": "Scheduled Reports",
+    "scenario": "A Sales Manager wants to automatically receive a report every Monday containing the previous week's Opportunity information.",
+    "question": "Which Salesforce feature should be configured?",
     "options": [
-      "Create all records manually in every test method",
-      "Use existing production records",
-      "Create a reusable Test Data Factory class",
-      "Disable test data creation"
+      "Report Scheduling",
+      "Approval Process",
+      "Record-Triggered Flow",
+      "Field Dependency"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
     "id": 30,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Apex Testing",
-    "scenario": "A developer wants to create common test records once and reuse them across multiple test methods within the same test class.",
-    "question": "Which annotation should be used for the common test data creation method?",
+    "category": "Apex — Data Types and Variables",
+    "scenario": "A developer wants to store an employee's salary, which may contain decimal values such as 45000.75.",
+    "question": "Which Apex data type is most appropriate?",
     "options": [
-      "@testSetup",
-      "@AuraEnabled",
-      "@Future",
-      "@InvocableMethod"
+      "Integer",
+      "Boolean",
+      "Decimal",
+      "Date"
     ],
-    "answer": 0
+    "answer": 2
   },
   {
     "id": 31,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Async Apex",
-    "scenario": "A developer wants to execute an HTTP callout asynchronously from Apex using a Future Method.",
-    "question": "Which annotation should be used to allow a Future Method to perform HTTP callouts?",
+    "category": "Apex — Type Casting",
+    "scenario": "A developer has a String variable containing the value '100' and wants to convert it into an Integer.",
+    "question": "Which Apex statement correctly performs this conversion?",
     "options": [
-      "@future",
-      "@future(callout=true)",
-      "@isTest",
-      "@AuraEnabled"
+      "Integer.valueOf('100')",
+      "String.valueOf(100)",
+      "Decimal.valueOf(100)",
+      "Boolean.valueOf('100')"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "id": 32,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Async Apex",
-    "scenario": "A company needs to process 300,000 Account records asynchronously. The developer wants to divide the records into smaller groups for processing.",
-    "question": "Which Batch Apex method is responsible for processing each group of records?",
+    "category": "Apex — Conditional Statements",
+    "scenario": "A developer wants to execute different code blocks based on whether an employee's salary is greater than, equal to, or less than 50,000.",
+    "question": "Which Apex conditional statement is suitable for checking these multiple conditions?",
     "options": [
-      "start()",
-      "execute()",
-      "finish()",
-      "schedule()"
+      "for loop",
+      "if-else if-else",
+      "while loop",
+      "try-catch"
     ],
     "answer": 1
   },
@@ -380,59 +380,59 @@ const QUESTIONS = [
     "id": 33,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Async Apex",
-    "scenario": "A developer implements Batch Apex and wants to retrieve a large number of records for processing without being restricted by the normal SOQL query row limit.",
-    "question": "Which return type can be used in the start() method to retrieve up to 50 million records?",
+    "category": "Apex — Switch Statement",
+    "scenario": "A developer wants to execute different code blocks based on an Opportunity Stage value such as Prospecting, Negotiation, Closed Won, or Closed Lost.",
+    "question": "Which Apex statement can be used to handle multiple discrete values?",
     "options": [
-      "List<sObject>",
-      "Set<Id>",
-      "Database.QueryLocator",
-      "Map<Id, sObject>"
+      "switch",
+      "while",
+      "try",
+      "for"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
     "id": 34,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Async Apex",
-    "scenario": "A company wants to execute an Apex class automatically every Sunday at midnight.",
-    "question": "Which interface should the Apex class implement to schedule its execution?",
+    "category": "Apex — String Methods",
+    "scenario": "A developer receives a String containing extra spaces before and after a customer's name. The developer wants to remove those unnecessary spaces.",
+    "question": "Which Apex String method should be used?",
     "options": [
-      "Database.Batchable",
-      "Queueable",
-      "Schedulable",
-      "Database.Stateful"
+      "toUpperCase()",
+      "trim()",
+      "contains()",
+      "replace()"
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "id": 35,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Async Apex",
-    "scenario": "A developer needs to execute an asynchronous process that accepts a complex Apex object as input and wants to monitor the execution through a job ID.",
-    "question": "Which method is used to submit a Queueable Apex job?",
+    "category": "Apex — Integer Methods",
+    "scenario": "A developer receives the String value '250' from an external application and wants to convert it into an Integer.",
+    "question": "Which Apex method should be used?",
     "options": [
-      "System.schedule()",
-      "System.enqueueJob()",
-      "Database.executeBatch()",
-      "System.future()"
+      "Integer.valueOf('250')",
+      "Integer.toString('250')",
+      "String.valueOf('250')",
+      "Decimal.toInteger('250')"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "id": 36,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Async Apex",
-    "scenario": "A developer has submitted a Queueable Apex job and wants to check whether the job is queued, processing, completed, or failed.",
-    "question": "Which Salesforce object stores information about asynchronous Apex jobs?",
+    "category": "Apex — For Loops",
+    "scenario": "A developer wants to iterate through every Account record stored in a List<Account> collection.",
+    "question": "Which loop is commonly used to iterate through each record in a collection?",
     "options": [
-      "CronTrigger",
-      "AsyncApexJob",
-      "ApexClass",
-      "ApexTestResult"
+      "do-while loop",
+      "for-each loop",
+      "switch statement",
+      "if-else statement"
     ],
     "answer": 1
   },
@@ -440,29 +440,29 @@ const QUESTIONS = [
     "id": 37,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Integration using Apex",
-    "scenario": "A developer wants to send an HTTP request from Salesforce to an external REST API and receive the response.",
-    "question": "Which Apex classes are commonly used to perform an HTTP callout?",
+    "category": "Apex — While Loops",
+    "scenario": "A developer wants to execute a block of code repeatedly as long as a variable is less than 10.",
+    "question": "Which Apex loop should be used?",
     "options": [
-      "Http, HttpRequest, and HttpResponse",
-      "Database, QueryLocator, and SaveResult",
-      "System, Test, and Assert",
-      "JSON, Schema, and Trigger"
+      "for loop only",
+      "while loop",
+      "switch statement",
+      "if statement"
     ],
-    "answer": 0
+    "answer": 1
   },
   {
     "id": 38,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Integration using Apex",
-    "scenario": "A company receives a WSDL file from an external banking application and wants to generate Apex classes to invoke its SOAP services.",
-    "question": "Which Salesforce tool is used to generate Apex classes from a WSDL file?",
+    "category": "Apex — SOQL",
+    "scenario": "A developer wants to retrieve all Account records where Industry is Banking and Annual Revenue is greater than 1 million.",
+    "question": "Which Salesforce query language should be used?",
     "options": [
-      "Schema Builder",
-      "WSDL2Apex",
-      "Developer Console",
-      "Object Manager"
+      "SOSL",
+      "SOQL",
+      "SQL",
+      "XML"
     ],
     "answer": 1
   },
@@ -470,14 +470,14 @@ const QUESTIONS = [
     "id": 39,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Integration using Apex",
-    "scenario": "A developer has hardcoded an external API endpoint and authentication details inside an Apex class. The company wants to securely manage the endpoint and authentication configuration.",
-    "question": "Which Salesforce feature is recommended for managing external endpoint and authentication configuration?",
+    "category": "Apex — SOQL Relationship Queries",
+    "scenario": "A developer wants to retrieve Contacts along with their parent Account Name and Account Industry.",
+    "question": "Which relationship query approach should be used?",
     "options": [
-      "Custom Labels",
-      "Named Credentials",
-      "Static Resources",
-      "Custom Settings only"
+      "Parent-to-child relationship query",
+      "Child-to-parent relationship query",
+      "SOSL query",
+      "Aggregate query only"
     ],
     "answer": 1
   },
@@ -485,16 +485,16 @@ const QUESTIONS = [
     "id": 40,
     "part": "Part 2 — Multiple Choice Questions",
     "type": "mcq",
-    "category": "Integration using Apex",
-    "scenario": "An external application needs to authenticate with Salesforce using OAuth 2.0 and access Salesforce data through REST APIs.",
-    "question": "Which Salesforce feature should be configured to enable this OAuth-based integration?",
+    "category": "Apex — SOSL",
+    "scenario": "A customer support application needs to search for the keyword 'John' across Account, Contact, and Lead records in a single search operation.",
+    "question": "Which Salesforce query language is best suited for this requirement?",
     "options": [
-      "Connected App",
-      "Validation Rule",
-      "Record Type",
-      "Page Layout"
+      "SOQL",
+      "SOSL",
+      "DML",
+      "Schema Builder"
     ],
-    "answer": 0
+    "answer": 1
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -502,64 +502,64 @@ const QUESTIONS = [
   // ══════════════════════════════════════════════════════════════
 
   {
-  id: 41,
-  part: "Part 3 — Live Coding",
-  type: "coding",
-  category: "Trigger — Before Insert",
-  language: "Apex",
-  file: "ContactTrigger.cls",
-  scenario: "Whenever a Contact is created, if the Department field is blank, it should automatically be populated with 'General'. The solution should support bulk inserts.",
-  question: "Write a before insert Apex trigger named ContactDepartmentTrigger that sets the default Department field value.",
-  placeholder: "",
-  hint: ""
-},
-{
-  id: 42,
-  part: "Part 3 — Live Coding",
-  type: "coding",
-  category: "Trigger — After Update",
-  language: "Apex",
-  file: "OpportunityTrigger.cls",
-  scenario: "Whenever an Opportunity Stage changes to 'Closed Won', update the related Account Description field with 'Won Customer'. The solution should work for bulk updates.",
-  question: "Write a bulkified after update Apex trigger named OpportunityAccountUpdateTrigger to update the related Account Description.",
-  placeholder: "",
-  hint: ""
-},
-{
-  id: 43,
-  part: "Part 3 — Live Coding",
-  type: "coding",
-  category: "Future Method",
-  language: "Apex",
-  file: "AccountFuture.cls",
-  scenario: "Whenever an Account Id is passed to a Future Method, update the Account Description field to 'Processed by Future Method'.",
-  question: "Write a Future Method class named AccountFuture that updates the Description field for the given Account Id.",
-  placeholder: "",
-  hint: ""
-},
-{
-  id: 44,
-  part: "Part 3 — Live Coding",
-  type: "coding",
-  category: "Queueable Apex",
-  language: "Apex",
-  file: "AccountQueueable.cls",
-  scenario: "A list of Account Ids should be processed asynchronously. For each Account, update the Rating field to 'Warm'.",
-  question: "Write a Queueable Apex class named AccountQueueable that updates the Rating field for all provided Account records.",
-  placeholder: "",
-  hint: ""
-},
-{
-  id: 45,
-  part: "Part 3 — Live Coding",
-  type: "coding",
-  category: "Batch Apex",
-  language: "Apex",
-  file: "ContactBatch.cls",
-  scenario: "Update the Mailing City of all Contacts to 'Hyderabad'. The solution should process records in batches.",
-  question: "Write a Batch Apex class named ContactBatch that updates the Mailing City field for all Contact records.",
-  placeholder: "",
-  hint: ""
-}
+    id: 41,
+    part: "Part 3 — Live Coding",
+    type: "coding",
+    category: "Apex — Conditional Statements and String Methods",
+    language: "Apex",
+    file: "EmployeeBonus.cls",
+    scenario: "A company wants to calculate employee bonuses based on performance ratings. Employees with an Excellent rating receive a 20% bonus, Good receive 10%, Average receive 5%, and Poor receive no bonus. The rating may contain unnecessary spaces and different uppercase or lowercase characters.",
+    question: "Write an Apex class named EmployeeBonus with a method that accepts the performance rating and salary as parameters. Use String methods and conditional statements to calculate and return the bonus amount.",
+    placeholder: "",
+    hint: ""
+  },
+  {
+    id: 42,
+    part: "Part 3 — Live Coding",
+    type: "coding",
+    category: "Apex — Loops and Integer Methods",
+    language: "Apex",
+    file: "NumberProcessor.cls",
+    scenario: "A company receives a List of numbers as Strings from an external application. The developer needs to convert each value into an Integer, identify even and odd numbers, and calculate the total sum of all numbers.",
+    question: "Write an Apex class named NumberProcessor with a method that accepts a List<String>, converts the values into Integers, identifies even and odd numbers, and returns the sum of all valid numbers. Use a loop and appropriate Integer methods.",
+    placeholder: "",
+    hint: ""
+  },
+  {
+    id: 43,
+    part: "Part 3 — Live Coding",
+    type: "coding",
+    category: "Apex — SOQL and Relationship Queries",
+    language: "Apex",
+    file: "AccountContactController.cls",
+    scenario: "A company wants to retrieve all Accounts belonging to the Banking Industry where Annual Revenue is greater than 1 million. For each Account, the system should also retrieve its related Contacts. The developer must avoid SOQL queries inside loops.",
+    question: "Write an Apex class named AccountContactController with a method that retrieves the matching Accounts along with their related Contacts using a parent-to-child SOQL relationship query. Return the Account and Contact information.",
+    placeholder: "",
+    hint: ""
+  },
+  {
+    id: 44,
+    part: "Part 3 — Live Coding",
+    type: "coding",
+    category: "Apex — SOSL",
+    language: "Apex",
+    file: "GlobalSearchController.cls",
+    scenario: "A customer support application needs a global search feature. When a user enters a keyword, the application should search across Account Names, Contact Names, and Lead Names and return matching records from all three objects.",
+    question: "Write an Apex class named GlobalSearchController with a method that accepts a search keyword and uses SOSL to retrieve matching Account, Contact, and Lead records. Return the search results.",
+    placeholder: "",
+    hint: ""
+  },
+  {
+    id: 45,
+    part: "Part 3 — Live Coding",
+    type: "coding",
+    category: "Salesforce Automation — Record-Triggered Flow",
+    language: "Apex",
+    file: "OpportunityTaskTrigger.trigger",
+    scenario: "Whenever an Opportunity is created with an Amount greater than 100000, the company wants to automatically create a Task related to that Opportunity. The Task Subject should be 'High Value Opportunity Follow-up', and the Task should be assigned to the Opportunity Owner. The solution must support bulk record creation.",
+    question: "Implement this requirement using a bulkified Apex trigger named OpportunityTaskTrigger. Create related Task records for all qualifying Opportunities without performing DML operations inside loops. Also explain how the same requirement could be implemented using a Record-Triggered Flow.",
+    placeholder: "",
+    hint: ""
+  }
 
 ];
